@@ -9,7 +9,6 @@ const StarShipsContainer = () => {
                     <StarShipsCard
                         shipName={starships.name}
                         shipModel={starships.model}
-                        shipCrew={starships.crew}
                     />
                 )
             })}
