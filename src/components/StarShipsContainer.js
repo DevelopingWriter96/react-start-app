@@ -1,5 +1,5 @@
 import { starships } from '../data/starships'
-import StarShipsCard from './StarShipsCard'
+import  StarShipsCard  from './StarShipsCard'
 
 const StarShipsContainer = () => {
     return (
