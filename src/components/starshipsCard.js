@@ -4,10 +4,11 @@ import { Card } from '@material-ui/core'
 const StarShipsCard = (props) => {
     const {
         shipName,
-        shipModel
+        shipModel,
+        shipCrew
     } = props
 
-    return (<Card id ={shipName}>
+    return (<Card key ={shipCrew}>
         {shipName} {shipModel}
     </Card>)
 }
