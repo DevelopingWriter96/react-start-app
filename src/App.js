@@ -1,11 +1,12 @@
 import './App.css';
-import './components/starshipsCard'
-import StarShipCard from './components/starshipsCard';
+//import './components/starshipsCard'
+import StarShipsContainer from './components/StarShipsContainer';
 
 function App() {
   return (
     <div className="App">
-      <StarShipCard/>
+      <StarShipsContainer />
+      {/*<StarShipCard/>*/}
     </div>
   );
 }

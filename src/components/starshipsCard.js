@@ -1,16 +1,15 @@
-import {starships} from '../data/starships.js'
-import {Card} from '@material-ui/core'
 
-const starShipCard = () => {
-    return starships.map((starship) => {
-        return (<Card key={starship.name}>
-        <h2 sx={{
-        mt: '10px',
-        width: 200,
-        color: '#00FF00',        
-    }}>{starship.name + ": " + starship.model}</h2>
-        </Card>)
-    })
+import { Card } from '@material-ui/core'
+
+const StarShipsCard = (props) => {
+    const {
+        shipName,
+        shipModel,
+        shipCrew
+    } = props
+
+    return (<Card key={shipCrew}>
+        {shipName} {shipModel}
+    </Card>)
 }
-
-export default starShipCard
+export default StarShipsCard
