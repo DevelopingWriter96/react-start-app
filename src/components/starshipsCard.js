@@ -7,7 +7,7 @@ const StarShipsCard = (props) => {
         shipModel
     } = props
 
-    return (<Card>
+    return (<Card id ={shipName}>
         {shipName} {shipModel}
     </Card>)
 }
