@@ -1,9 +1,13 @@
 import { starships } from '../data/starships'
 import  StarShipsCard  from './StarShipsCard'
+import { Box } from '@material-ui/core'
 
 const StarShipsContainer = () => {
     return (
-        <div>
+        <Box sx={{
+            display: "flex",
+            flexWrap: "wrap" 
+        }}>
             {starships.map((starships) => {
                 return (
                     <StarShipsCard
@@ -13,7 +17,7 @@ const StarShipsContainer = () => {
                     />
                 )
             })}
-        </div>
+        </Box>
     )
 }
 

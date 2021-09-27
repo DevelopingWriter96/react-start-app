@@ -8,8 +8,10 @@ const StarShipsCard = (props) => {
         shipCrew
     } = props
 
-    return (<Card key ={shipCrew}>
+    return (
+    <Card key={shipCrew} className="card">
         {shipName} {shipModel}
-    </Card>)
+    </Card>
+    )
 }
 export default StarShipsCard
