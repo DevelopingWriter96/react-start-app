@@ -1,5 +1,5 @@
-
 import { Card } from '@material-ui/core'
+import './StarShipsCards.css'
 
 const StarShipsCard = (props) => {
     const {
