@@ -1,19 +1,16 @@
 import { starships } from '../data/starships'
 import  StarShipsCard  from './StarShipsCard'
-import { Box } from '@material-ui/core'
+import Box from '@mui/material/Box'
 
 const StarShipsContainer = () => {
     return (
         <Box sx={{
             display: "flex",
-            flexWrap: "wrap" 
+            flexWrap: "wrap"
         }}>
             {starships.map((starships) => {
                 return (
-                    <StarShipsCard
-                        shipName={starships.name}
-                        shipModel={starships.model}
-                        shipCrew = {starships.crew}
+                    <StarShipsCard {...starships}
                     />
                 )
             })}
