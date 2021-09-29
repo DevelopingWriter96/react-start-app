@@ -4,7 +4,6 @@ import  Typography  from '@mui/material/Typography'
 import CardActions from '@mui/material/CardActions'
 import IconButton from '@mui/material/IconButton'
 import InfoIcon from '@mui/icons-material/Info'
-//import { flexbox } from '@mui/system'
 
 const StarShipsCard = (props) => {
 
