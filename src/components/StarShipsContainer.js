@@ -5,6 +5,7 @@ import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
 import Typograpy  from '@mui/material/Typography'
 
+
 const style = {
     postion: 'absolute',
     top: '50%',
@@ -17,34 +18,41 @@ const style = {
     p: 4,
 }
 
-const initialNames = ["starship"]
 
 const StarShipsContainer = () => {
 const [open, setOpen] = React.useState(false)
 const handleOpen = () => setOpen(true)
 const handleClose = () => setOpen(false)
-const [favorites, setFavorites] = React.useState(initialNames)
+const [favorites, setFavorites] = React.useState([])
 
-const addToFavorites = (starshipName) => {
-    console.log(`${starshipName} added to favorites`)
-setFavorites((prevState) => {
-        return [...prevState, starshipName]
-    })
-}
+const addToFavorites = (starships) => {
+    console.log(`${starships} added to favorites`)
+        if (!favorites.includes(starships)) {
+            setFavorites((prevState) => [...prevState, starships])
+        } else {
+          setFavorites(() => {
+            return favorites.filter((item)=> item !== starships)
+            })
+          }
+        }
 
     return (
         <Box sx={{
             display: "flex",
             flexWrap: "wrap"
         }}>
-            {favorites.map((starshipName) =>{
+            {[...favorites].map((starships) =>{
                 return (
-                    <p>{starshipName}</p>
+                    <p key={starships}>{`${starships} added to favorites`}</p>
                 )
             })}
             {starships.map((starships) => {
                 return (
-                    <StarShipsCard addToFavoritesFunction={addToFavorites} modalFunction={handleOpen} starships={{...starships}}
+                    <StarShipsCard
+                    key={starships.name}
+                    addToFavoritesFunction={addToFavorites} 
+                    modalFunction={handleOpen} 
+                    starships={{...starships}}
                     />
                 )
             })}
