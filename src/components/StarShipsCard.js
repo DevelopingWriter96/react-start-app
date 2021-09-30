@@ -15,7 +15,9 @@ const StarShipsCard = (props) => {
     } 
 
     const handleFavoriteClick = () => {
-        setFavorite(favorite ? false : true)
+        console.log(props.starships.name)
+        setFavorite(!favorite)
+        props.addToFavoritesFunction(props.starships.name)
     }
     
     return (

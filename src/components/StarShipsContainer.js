@@ -17,19 +17,34 @@ const style = {
     p: 4,
 }
 
+const initialNames = ["starship"]
+
 const StarShipsContainer = () => {
 const [open, setOpen] = React.useState(false)
 const handleOpen = () => setOpen(true)
 const handleClose = () => setOpen(false)
+const [favorites, setFavorites] = React.useState(initialNames)
+
+const addToFavorites = (starshipName) => {
+    console.log(`${starshipName} added to favorites`)
+setFavorites((prevState) => {
+        return [...prevState, starshipName]
+    })
+}
 
     return (
         <Box sx={{
             display: "flex",
             flexWrap: "wrap"
         }}>
+            {favorites.map((starshipName) =>{
+                return (
+                    <p>{starshipName}</p>
+                )
+            })}
             {starships.map((starships) => {
                 return (
-                    <StarShipsCard modalFunction={handleOpen} starships={{...starships}}
+                    <StarShipsCard addToFavoritesFunction={addToFavorites} modalFunction={handleOpen} starships={{...starships}}
                     />
                 )
             })}
