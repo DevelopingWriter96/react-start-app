@@ -27,14 +27,10 @@ const [favorites, setFavorites] = React.useState([])
 
 const addToFavorites = (starships) => {
     console.log(`${starships} added to favorites`)
-        if (!favorites.includes(starships)) {
-            setFavorites((prevState) => [...prevState, starships])
-        } else {
-          setFavorites(() => {
-            return favorites.filter((item)=> item !== starships)
-            })
-          }
-        }
+    setFavorites((prevState) => {
+        return [...prevState, starships]
+    })
+}
 
     return (
         <Box sx={{
