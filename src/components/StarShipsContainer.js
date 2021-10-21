@@ -3,8 +3,7 @@ import { starships } from '../data/starships'
 import  StarShipsCard  from './StarShipsCard'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
-import Typograpy  from '@mui/material/Typography'
-
+import { Typography }  from '@mui/material'
 
 const style = {
     postion: 'absolute',
@@ -18,30 +17,41 @@ const style = {
     p: 4,
 }
 
-
 const StarShipsContainer = () => {
 const [open, setOpen] = React.useState(false)
 const handleOpen = () => setOpen(true)
 const handleClose = () => setOpen(false)
 const [favorites, setFavorites] = React.useState([])
+const [starshipsList, setStarshipsList] = React.useState([])
+
+React.useEffect(() => {
+  console.log("I want to call my api now")
+    
+}, [])
 
 const addToFavorites = (starships) => {
-    console.log(`${starships} added to favorites`)
-    setFavorites((prevState) => {
-        return [...prevState, starships]
-    })
-}
+    console.log(`${starships.name} was clicked to add to favorites`)
+    if (!favorites.includes(starships.name)) {
+      setFavorites((prevState) => [...prevState, starships.name])
+    } else {
+      setFavorites(() => {
+        return favorites.filter((item) => item !== starships.name)
+      }) 
+    }
+  }
 
     return (
+        <>
+        <Box>
+            <Typography variant="h4">
+
+            </Typography>
+        </Box>
         <Box sx={{
             display: "flex",
             flexWrap: "wrap"
         }}>
-            {[...favorites].map((starships) =>{
-                return (
-                    <p key={starships}>{`${starships} added to favorites`}</p>
-                )
-            })}
+
             {starships.map((starships) => {
                 return (
                     <StarShipsCard
@@ -54,12 +64,13 @@ const addToFavorites = (starships) => {
             })}
             <Modal open={open} onClose={handleClose}>
                 <Box sx={style}>
-                    <Typograpy variant="h6">
+                    <Typography variant="h6">
                         StarShip Information
-                    </Typograpy>
+                    </Typography>
                 </Box>
             </Modal>
         </Box>
+        </>
     )
 }
 
