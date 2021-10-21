@@ -4,6 +4,7 @@ import  StarShipsCard  from './StarShipsCard'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
 import { Typography }  from '@mui/material'
+import axios from 'axios'
 
 const style = {
     postion: 'absolute',
@@ -25,8 +26,16 @@ const [favorites, setFavorites] = React.useState([])
 const [starshipsList, setStarshipsList] = React.useState([])
 
 React.useEffect(() => {
+  const fetchStarshipList = async () => {
   console.log("I want to call my api now")
-    
+  try {
+      const response = await axios.get("/starships")
+      console.log(response)
+  } catch (error) {
+    console.log(error)
+  }
+}
+fetchStarshipList()
 }, [])
 
 const addToFavorites = (starships) => {

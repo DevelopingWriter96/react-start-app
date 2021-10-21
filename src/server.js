@@ -10,7 +10,7 @@ app.use((req, res, next) => {
     next ()
 })
 
-app.get('/senate', (req, res) => {
+app.get('/starshipsnp', (req, res) => {
     //axios.get(propublica api goes here)
     res.json([{name: 'Executor', model: 'Executor-class star dreadnought'}, {name: 'Sentinel-class landing craft', model: 'Sentinel-class landing craft'}])
 })
