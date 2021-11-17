@@ -30,8 +30,8 @@ const StarShipsContainer = () => {
       console.log("I want to call my api now")
       try {
         const response = await axios.get('/starships')
-        console.log(response)
-        setStarshipsList(response.data) 
+        console.log(response.data[0].name[0])
+        setStarshipsList(response.data[0].name[0]) 
       } catch (error) {
         console.log(error)
       }

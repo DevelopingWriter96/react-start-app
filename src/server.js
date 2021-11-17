@@ -11,8 +11,11 @@ app.use((req, res, next) => {
 })
 
 app.get('/starships', (req, res) => {
-    //axios.get("zelda api goes here")
-    res.json([{id: 1, name: 'Executor', model: 'Executor-class star dreadnought'}, {id: 2, name: 'Sentinel-class landing craft', model: 'Sentinel-class landing craft'}])
+    axios.get('https://the-legend-of-zelda.p.rapidapi.com/games', {
+        headers: {'x-rapidapi-key': process.env.ZELDA_API_KEY}
+    })
+    .then((response) => res.json(response.data))
+    .catch((err) => res.status(500).json({ type: 'error', message: err.message }))
 })
 
 const PORT = process.env.PORT || 9000
