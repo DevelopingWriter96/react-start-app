@@ -12,7 +12,11 @@ app.use((req, res, next) => {
 
 app.get('/starships', (req, res) => {
     axios.get('https://the-legend-of-zelda.p.rapidapi.com/games', {
-        headers: {'x-rapidapi-key': process.env.ZELDA_API_KEY}
+        params: {limit: '29'},
+        headers: {
+            'x-rapidapi-host': 'the-legend-of-zelda.p.rapidapi.com',
+            'x-rapidapi-key': process.env.ZELDA_API_KEY
+        }
     })
     .then((response) => res.json(response.data))
     .catch((err) => res.status(500).json({ type: 'error', message: err.message }))
