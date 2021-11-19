@@ -30,8 +30,8 @@ const StarShipsContainer = () => {
       console.log("I want to call my api now")
       try {
         const response = await axios.get('/starships')
-        console.log(response.data[0].name)
-        setStarshipsList(response.data[0].name) 
+        console.log(response.data)
+        setStarshipsList(response.data) 
       } catch (error) {
         console.log(error)
       }
@@ -62,20 +62,20 @@ const StarShipsContainer = () => {
         flexWrap: "wrap"
       }}>
 
-        {starshipsList.map((starships) => {
+        {starshipsList.map((starship) => {
           return (
             <StarShipsCard
-              key={starships.name}
+              key={starship.name}
               addToFavoritesFunction={addToFavorites}
               modalFunction={handleOpen}
-              starships={{ ...starships }}
+              //starship={{ ...starships }}
             />
           )
         })}
         <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
             <Typography variant="h6">
-              StarShip Information
+              Game Title
             </Typography>
           </Box>
         </Modal>
