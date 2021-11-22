@@ -14,7 +14,7 @@ export const GamesContextProvider = (props) => {
       // first define the async function
       const fetchNames = async () => {
           try {
-            const response = await axios get(/games) 
+            const response = await axios.get('/games') 
             const names = await response.data.results[0].names
             console.log(response)
             setNames(names)
