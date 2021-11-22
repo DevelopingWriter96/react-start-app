@@ -5,7 +5,9 @@ import { GamesContextProvider } from './contexts/gamescontext';
 function App() {
   return (
     <div className="App">
+      <GamesContextProvider>
       <StarShipsContainer />
+      </GamesContextProvider>
     </div>
   );
 }
