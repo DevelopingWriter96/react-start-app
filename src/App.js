@@ -1,6 +1,6 @@
 import './App.css';
-import StarShipsContainer from './components/StarShipsContainer'
-import { GamesContextProvider } from './contexts/gamescontext'
+import StarShipsContainer from './components/StarShipsContainer';
+import { GamesContextProvider } from './contexts/gamescontext';
 
 function App() {
   return (
