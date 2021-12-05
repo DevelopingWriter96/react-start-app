@@ -10,7 +10,7 @@ app.use((req, res, next) => {
     next()
 })
 
-app.get('/starships', (req, res) => {
+app.get('/games', (req, res) => {
     axios.get('https://the-legend-of-zelda.p.rapidapi.com/games', {
         params: {limit: '29'},
         headers: {

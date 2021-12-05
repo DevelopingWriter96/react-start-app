@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { starships } from '../data/starships'
+//import { starships } from '../data/starships'
 import StarShipsCard from './StarShipsCard'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
