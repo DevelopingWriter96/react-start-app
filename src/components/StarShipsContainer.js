@@ -4,7 +4,8 @@ import StarShipsCard from './StarShipsCard'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
 import { Typography } from '@mui/material'
-import axios from 'axios'
+//import axios from 'axios'
+import { useGameContext } from '../contexts/gamescontext'
 
 const style = {
   postion: 'absolute',
@@ -23,21 +24,7 @@ const StarShipsContainer = () => {
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
   const [favorites, setFavorites] = React.useState([])
-  const [starshipsList, setStarshipsList] = React.useState([])
-
-  React.useEffect(() => {
-    const fetchStarshipList = async () => {
-      console.log("I want to call my api now")
-      try {
-        const response = await axios.get('/starships')
-        console.log(response.data)
-        setStarshipsList(response.data) 
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    fetchStarshipList()
-  }, [])
+  const gameData = useGameContext()
 
   const addToFavorites = (starships) => {
     console.log(`${starships.name} was clicked to add to favorites`)
@@ -61,10 +48,10 @@ const StarShipsContainer = () => {
         flexWrap: "wrap"
       }}>
 
-        {starshipsList.map((starship) => {
+        {gameData.names.map((game) => {
           return (
             <StarShipsCard
-              key={starship.name}
+              key={game.name}
               addToFavoritesFunction={addToFavorites}
               modalFunction={handleOpen}
               //starship={{ ...starships }}

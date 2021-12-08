@@ -1,6 +1,6 @@
-import './App.css';
-import StarShipsContainer from './components/StarShipsContainer';
-import { GamesContextProvider } from './contexts/gamescontext';
+import './App.css'
+import StarShipsContainer from './components/StarShipsContainer'
+import { GamesContextProvider } from './contexts/gamescontext'
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <StarShipsContainer />
       </GamesContextProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

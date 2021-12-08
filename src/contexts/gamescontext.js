@@ -25,4 +25,15 @@ export const GamesContextProvider = (props) => {
       //then call the function
       fetchNames()
     }, [])
+    
+    return (
+      <GamesContext.Provider value={{
+        names,
+        descriptions,
+      }}>
+        {props.children}
+      </GamesContext.Provider>
+    )
 }
+
+export const useGameContext = () => React.useContext(GamesContext)
