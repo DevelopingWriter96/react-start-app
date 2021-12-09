@@ -48,13 +48,13 @@ const StarShipsContainer = () => {
         flexWrap: "wrap"
       }}>
 
-        {gameData.names.map((game) => {
+        {gameData.games.map((game) => {
           return (
             <StarShipsCard
               key={game.name}
               addToFavoritesFunction={addToFavorites}
               modalFunction={handleOpen}
-              //starship={{ ...starships }}
+              game={{ ...game }}
             />
           )
         })}
