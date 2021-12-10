@@ -15,9 +15,9 @@ const StarShipsCard = (props) => {
     } 
 
     const handleFavoriteClick = () => {
-        console.log(props.data)
+        console.log(props.game)
         setFavorite(!favorite)
-        props.addToFavoritesFunction(props.data)
+        props.addToFavoritesFunction(props.game)
     }
     
     return (
@@ -35,8 +35,8 @@ const StarShipsCard = (props) => {
         },
     }}>
         <CardContent>
-            <Typography variant="h5" color="success.dark">{props.data}</Typography>
-            <Typography sx={{ fontSize : 14 }} color="success.dark">{props.data}</Typography>
+            <Typography variant="h5" color="success.dark">{props.game.name}</Typography>
+            <Typography sx={{ fontSize : 14 }} color="success.dark">{props.game.description}</Typography>
         </CardContent>
     <CardActions>
     <IconButton sx={{ p : 0}} onClick={handleInfoClick}>
