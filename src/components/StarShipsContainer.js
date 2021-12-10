@@ -26,13 +26,13 @@ const StarShipsContainer = () => {
   const [favorites, setFavorites] = React.useState([])
   const gameData = useGameContext()
 
-  const addToFavorites = (starships) => {
-    console.log(`${starships.name} was clicked to add to favorites`)
-    if (!favorites.includes(starships.name)) {
-      setFavorites((prevState) => [...prevState, starships.name])
+  const addToFavorites = (games) => {
+    console.log(`${games.data} was clicked to add to favorites`)
+    if (!favorites.includes(games)) {
+      setFavorites((prevState) => [...prevState, games.data])
     } else {
       setFavorites(() => {
-        return favorites.filter((item) => item !== starships.name)
+        return favorites.filter((item) => item !== games.data)
       })
     }
   }
@@ -48,7 +48,7 @@ const StarShipsContainer = () => {
         flexWrap: "wrap"
       }}>
 
-        {gameData.games.map((game) => {
+        {gameData.data.map((game) => {
           return (
             <StarShipsCard
               key={game.name}

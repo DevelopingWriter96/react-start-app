@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <GamesContextProvider>
-      <StarShipsContainer />
+        <StarShipsContainer />
       </GamesContextProvider>
     </div>
   )
