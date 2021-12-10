@@ -27,7 +27,7 @@ const StarShipsContainer = () => {
   const { names } = useGameContext()
 
   const addToFavorites = (game) => {
-    console.log(`${game} was clicked to add to favorites`)
+    console.log(`${game.name} was clicked to add to favorites`)
     if (!favorites.includes(game)) {
       setFavorites((prevState) => [...prevState, game])
     } else {
@@ -40,7 +40,7 @@ const StarShipsContainer = () => {
   return (
     <>
       <Box>
-        <Typography variant="h4">
+        <Typography variant="h8">
         </Typography>
       </Box>
       <Box sx={{
@@ -60,7 +60,7 @@ const StarShipsContainer = () => {
         })}
         <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
-            <Typography variant="h6">
+            <Typography variant="h8">
             </Typography>
           </Box>
         </Modal>

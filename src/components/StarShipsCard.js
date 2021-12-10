@@ -26,8 +26,8 @@ const StarShipsCard = (props) => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        width: 168,
-        height: 250,
+        width: 360,
+        height: 720,
         m: 1,
         '&:hover': {
           backgroundColor: '#bbb',
@@ -35,8 +35,8 @@ const StarShipsCard = (props) => {
         },
     }}>
         <CardContent>
-            <Typography variant="h5" color="success.dark">{props.game.name}</Typography>
-            <Typography sx={{ fontSize : 14 }} color="success.dark">{props.game.description}</Typography>
+            <Typography variant="h6" color="success.dark">{props.game.name}</Typography>
+            <Typography sx={{ fontSize : 12 }} color="success.dark">{props.game.description}</Typography>
         </CardContent>
     <CardActions>
     <IconButton sx={{ p : 0}} onClick={handleInfoClick}>

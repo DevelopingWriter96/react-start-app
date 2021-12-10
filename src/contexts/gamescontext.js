@@ -2,13 +2,11 @@ import * as React from 'react'
 import axios from 'axios'
 
 const GamesContext = React.createContext({
-    names: [],
-    // descriptions: [],
+    names: []
 })
 
 export const GamesContextProvider = (props) => {
     const [names, setNames] = React.useState([])
-    // const [descriptions, setDescriptions] = React.useState([])
 
     React.useEffect(() => {
       // first define the async function
