@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Card from '@mui/material/Card'
+import CardMedia from '@mui/material/CardMedia' 
 import CardContent from '@mui/material/CardContent'
 import  Typography  from '@mui/material/Typography'
 import CardActions from '@mui/material/CardActions'
@@ -36,7 +37,7 @@ const StarShipsCard = (props) => {
           //opacity: [0.9, 0.8, 0.7],
         //},
     }}>
-        <CardMedia component='img' alt='Zelda Game Cover' height='200' image={`../zeldacoverart/botw.jpg`} />
+        <CardMedia component='img' alt='Zelda Game Cover' height='200' image={`././src/zeldacoverart/botw`}/>
         <CardContent>
             <Typography variant="h6" color="success.dark">{props.game.name}</Typography>
             <Typography sx={{ fontSize : 12 }} color="success.dark">{props.game.description}</Typography>
