@@ -11,10 +11,10 @@ export const GamesContextProvider = (props) => {
     React.useEffect(() => {
       // first define the async function
       const fetchNames = async () => {
+          const zeldaURL = `/.netlify/functions/games`
           try {
-            const response = await axios.get('/games') 
-            const names = await response.data.data
-            console.log(names)
+            const zeldaResponse = await axios.get(zeldaURL) 
+            const names = await zeldaResponse.data
             setNames(names)
           } catch (error) {
             console.log(error)
