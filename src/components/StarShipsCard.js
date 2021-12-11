@@ -26,14 +26,17 @@ const StarShipsCard = (props) => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        width: 360,
-        height: 720,
+        width: 350,
+        height: 710,
         m: 1,
-        '&:hover': {
-          backgroundColor: '#bbb',
-          opacity: [0.9, 0.8, 0.7],
-        },
+        border: 5,
+        borderColor: "#00CC00"
+        // '&:hover': {
+          //backgroundColor: '#bbb',
+          //opacity: [0.9, 0.8, 0.7],
+        //},
     }}>
+        <CardMedia component='img' alt='Zelda Game Cover' height='200' image={`../zeldacoverart/botw.jpg`} />
         <CardContent>
             <Typography variant="h6" color="success.dark">{props.game.name}</Typography>
             <Typography sx={{ fontSize : 12 }} color="success.dark">{props.game.description}</Typography>
