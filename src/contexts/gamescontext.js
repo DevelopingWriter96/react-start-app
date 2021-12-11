@@ -26,7 +26,7 @@ export const GamesContextProvider = (props) => {
     
     return (
       <GamesContext.Provider value={{
-        names,
+        names
       }}>
         {props.children}
       </GamesContext.Provider>
