@@ -61,6 +61,7 @@ const StarShipsContainer = () => {
         <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
             <Typography variant="h8">
+              Game Information
             </Typography>
           </Box>
         </Modal>
