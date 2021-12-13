@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Modal from '@mui/material/Modal'
 import LoginForm from '../login/LoginForm';
 
-const style = {
+/* const style = {
   postion: 'absolute',
   top: '50%',
   left: '50%',
@@ -20,7 +20,7 @@ const style = {
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
-}
+}*/
 
 const ButtonAppBar = () => {
   const [open, setOpen] = React.useState(false)
