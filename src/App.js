@@ -11,9 +11,9 @@ function App() {
       <GamesContextProvider>
       <ButtonAppBar />
       <Routes>
-        <Route path="/welcome" element={<Welcome />} />
-        <Route path="/starshipscontainer" element={<StarShipsContainer />} />
+        <Route path="/Welcome" element={<Welcome />} />
       </Routes>
+      <StarShipsContainer />
       </GamesContextProvider>
     </div>
   )
