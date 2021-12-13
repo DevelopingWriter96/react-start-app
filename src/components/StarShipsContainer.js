@@ -1,5 +1,4 @@
 import * as React from 'react'
-//import { starships } from '../data/starships'
 import StarShipsCard from './StarShipsCard'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
@@ -60,9 +59,11 @@ const StarShipsContainer = () => {
         })}
         <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
-            <Typography variant="h8">
-              Game Information
-            </Typography>
+          <Typography variant="h6" color="success.dark">{names.name}</Typography>
+          <Typography sx={{ fontSize : 12 }} color="success.dark">{names.description}</Typography>
+          <Typography sx={{ fontSize : 14}} color="success.dark">Developed by: {names.publisher}</Typography>
+          <Typography variant="h8" color="success.dark">Published by: {names.developer}</Typography>
+          <Typography variant="h6" color="success.dark">Released: {names.released_date}</Typography>
           </Box>
         </Modal>
       </Box>

@@ -1,4 +1,5 @@
 import { Box, Button, TextField } from '@mui/material'
+import { Typography } from '@mui/material'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 
@@ -19,6 +20,7 @@ const LoginForm = (props) => {
 
     return (
         <Box sx={style}>
+            <Typography>Greetings Traveler! Have we met?</Typography>
             <Formik initialValues={{
                 email: "link@hyrule.com",
                 password: "Hyrule1986"
