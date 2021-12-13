@@ -28,7 +28,7 @@ const StarShipsCard = (props) => {
         flexDirection: 'column',
         justifyContent: 'space-between',
         width: 350,
-        height: 910,
+        height: 700,
         m: 1,
         border: 5,
         borderColor: "#00CC00"

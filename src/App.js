@@ -3,7 +3,7 @@ import StarShipsContainer from './components/StarShipsContainer'
 import { GamesContextProvider } from './contexts/gamescontext'
 import ButtonAppBar from './components/nav/ButtonAppBar'
 import { Route, Routes } from 'react-router-dom'
-import Welcome from './pages/Welcome'
+//import Welcome from './pages/Welcome'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <GamesContextProvider>
       <ButtonAppBar />
       <Routes>
-        <Route path="/welcome" element={<Welcome />} />
+        {/* <Route path="/welcome" element={<Welcome />} /> */}
       </Routes>
       <StarShipsContainer />
       </GamesContextProvider>
