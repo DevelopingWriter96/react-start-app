@@ -1,4 +1,6 @@
-import { Box, Button, TextField } from '@mul/material'
+import { Box, Button, TextField } from '@mui/material'
+import { Formik } from 'formik'
+import * as Yup from 'yup'
 
 const style = {
     postion: 'absolute',
@@ -13,12 +15,83 @@ const style = {
 }
 
 const LoginForm = (props) => {
+    const { closeHandler } = props
 
     return (
         <Box sx={style}>
-            <TextField>Email</TextField>
-            <TextField>Password</TextField>
-            <Button>Log In</Button>
+            <Formik initialValues={{
+                email: "link@hyrule.com",
+                password: "Hyrule1986"
+            }}
+                validationSchema={Yup.object().shape({
+                    email: Yup.string()
+                        .email('Must be a valid email')
+                        .max(255)
+                        .required('Email is required'),
+                    password: Yup.string().min(8, "Must be at least 8 characters").max(255).required('Password is required')
+                })}
+                onSubmit={(value, { setErrors, setStatus, setSubmitting }) => {
+                    try {
+                        console.log('Successfully submitted!')
+                        setStatus({ success: true })
+                        setSubmitting(false)
+                    } catch (err) {
+                        console.log(err)
+                        setStatus({ success: false })
+                        setErrors({ submit: err.message })
+                        setSubmitting(false)
+                    } finally {
+                        closeHandler()
+                    }
+                }}
+            >
+                {({ errors, values, handleSubmit, handleBlur, handleChange, isSubmitting, touched }) => (
+                    <form noValidate onSubmit={handleSubmit}>
+                        <TextField
+                            error={Boolean(touched.email && errors.email)}
+                            fullWidth
+                            helperText={touched.email && errors.email}
+                            label="Email Address"
+                            margin="normal"
+                            name="email"
+                            onBlur={handleBlur}
+                            onChange={handleChange}
+                            type="email"
+                            variant="outlined"
+                            value={values.email}
+                        />
+                        <TextField
+                            error={Boolean(touched.password && errors.password)}
+                            fullWidth
+                            helperText={touched.password && errors.password}
+                            label="Password"
+                            margin="normal"
+                            name="password"
+                            onBlur={handleBlur}
+                            onChange={handleChange}
+                            type="password"
+                            variant="outlined"
+                            value={values.password}
+                        />
+                        {errors.submit && (
+                        <Box sx={{ mt: 3 }}>
+                            <FormHelperText error>
+                            {errors.submit}
+                            </FormHelperText>
+                        </Box>
+                        )}
+                        <Button
+                            color="primary"
+                            disabled={isSubmitting}
+                            fullWidth size="large"
+                            variant="contained"
+                            type="submit"
+                        >
+                            Log In
+                        </Button>
+                    </form>
+                )}
+            </Formik>
         </Box>
     )
 }

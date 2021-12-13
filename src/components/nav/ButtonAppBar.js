@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Modal from '@mui/material/Modal'
+import LoginForm from '../login/LoginForm';
 
 const style = {
   postion: 'absolute',
@@ -46,8 +47,8 @@ const ButtonAppBar = () => {
         </Toolbar>
       </AppBar>
     </Box>
-            <Modal open={open} onClose={handleClose}>
-            
+          <Modal open={open}>
+            <LoginForm closeHandler={handleClose}/>  
           </Modal>
      </>
   );
