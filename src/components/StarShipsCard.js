@@ -37,7 +37,7 @@ const StarShipsCard = (props) => {
           //opacity: [0.9, 0.8, 0.7],
         //},
     }}>
-    <CardMedia component='img' alt='Zelda Game Cover' height='300' image={`/images/${props.game._id}.jpg/`}/>
+    <CardMedia component='img' alt='Zelda Game Cover' height='300' image={`../../public/images/${props.game._id}.jpg/`}/>
         <CardContent>
             <Typography variant="h6" color="success.dark">{props.game.name}</Typography>
             <Typography sx={{ fontSize : 12 }} color="success.dark">{props.game.description}</Typography>
