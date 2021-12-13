@@ -2,7 +2,7 @@ import './App.css'
 import StarShipsContainer from './components/StarShipsContainer'
 import { GamesContextProvider } from './contexts/gamescontext'
 import ButtonAppBar from './components/nav/ButtonAppBar'
-import { Route, Routes } from 'react-router-dom'
+//import { Route, Routes } from 'react-router-dom'
 //import Welcome from './pages/Welcome'
 
 function App() {
@@ -10,9 +10,9 @@ function App() {
     <div className="App">
       <GamesContextProvider>
       <ButtonAppBar />
-      <Routes>
-        {/* <Route path="/welcome" element={<Welcome />} /> */}
-      </Routes>
+      {/* <Routes>
+        <Route path="/welcome" element={<Welcome />} />
+      </Routes> */}
       <StarShipsContainer />
       </GamesContextProvider>
     </div>
