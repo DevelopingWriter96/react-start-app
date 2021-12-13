@@ -41,7 +41,7 @@ const ButtonAppBar = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            The World of Hyrule
+            Welcome to The Kingdom of Hyrule
           </Typography>
           <Button color="inherit" onClick={handleOpen}>Login</Button>
         </Toolbar>
