@@ -37,7 +37,7 @@ const StarShipsCard = (props) => {
           //backgroundColor: '#bbb',
           //opacity: [0.9, 0.8, 0.7],
         //},
-    }}>
+    }} onClick={handleInfoClick}>
     <CardMedia component='img' alt='Zelda Game Cover' width='325' image={`/images/${props.game._id}.jpg`}/>
         <CardContent>
             <Typography variant="h6" color="success.dark">{props.game.name}</Typography>
@@ -47,7 +47,7 @@ const StarShipsCard = (props) => {
             <Typography variant="h6" color="success.dark">Released: {props.game.released_date}</Typography>*/}
         </CardContent>
     <CardActions>
-    <IconButton sx={{ p : 0}} onClick={handleInfoClick}>
+    <IconButton sx={{ p : 0}}>
         <InfoIcon />
     </IconButton>
     <IconButton sx={{ p: 0, m: 0}} onClick={handleFavoriteClick}>
