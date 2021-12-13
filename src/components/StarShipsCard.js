@@ -28,7 +28,7 @@ const StarShipsCard = (props) => {
         flexDirection: 'column',
         justifyContent: 'space-between',
         width: 350,
-        height: 710,
+        height: 910,
         m: 1,
         border: 5,
         borderColor: "#00CC00"
@@ -37,10 +37,13 @@ const StarShipsCard = (props) => {
           //opacity: [0.9, 0.8, 0.7],
         //},
     }}>
-    <CardMedia component='img' alt='Zelda Game Cover' height='300' image={`../../public/images/${props.game._id}.jpg/`}/>
+    <CardMedia component='img' alt='Zelda Game Cover' width='325' image={`/images/${props.game._id}.jpg`}/>
         <CardContent>
             <Typography variant="h6" color="success.dark">{props.game.name}</Typography>
-            <Typography sx={{ fontSize : 12 }} color="success.dark">{props.game.description}</Typography>
+            {/*<Typography sx={{ fontSize : 12 }} color="success.dark">{props.game.description}</Typography>
+            <Typography variant="h6" color="success.dark">Developed by: {props.game.publisher}</Typography>
+            <Typography variant="h6" color="success.dark">Published by: {props.game.developer}</Typography>
+            <Typography variant="h6" color="success.dark">Released: {props.game.released_date}</Typography>*/}
         </CardContent>
     <CardActions>
     <IconButton sx={{ p : 0}} onClick={handleInfoClick}>
