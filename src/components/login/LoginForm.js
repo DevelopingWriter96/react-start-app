@@ -73,13 +73,6 @@ const LoginForm = (props) => {
                             variant="outlined"
                             value={values.password}
                         />
-                        {errors.submit && (
-                        <Box sx={{ mt: 3 }}>
-                            <FormHelperText error>
-                            {errors.submit}
-                            </FormHelperText>
-                        </Box>
-                        )}
                         <Button
                             color="primary"
                             disabled={isSubmitting}
