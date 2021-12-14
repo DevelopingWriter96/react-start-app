@@ -10,23 +10,27 @@ import MenuIcon from '@mui/icons-material/Menu';
 //import Modal from '@mui/material/Modal'
 //import LoginForm from '../login/LoginForm';
 import { NavLink } from 'react-router-dom';
-
-/* const style = {
-  postion: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(75%, 75%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
-}*/
+import { ListItem, List, Drawer, ListItemIcon } from '@mui/material'
+import MailIcon from '@mui/icons-material/Mail'
 
 const ButtonAppBar = () => {
-  //const [open, setOpen] = React.useState(false)
-  //const handleOpen = () => setOpen(true)
-  //const handleClose = () => setOpen(false)
+  const [isOpen, setIsOpen] = React.useState(false)
+
+   const toggleDrawer = () => {
+     setIsOpen(!isOpen)
+   }
+
+   const drawerItemList = () => {
+     <Box sx={{ width: 250 }} role="presentation">
+       <List>
+         <ListItem>
+           <ListItemIcon>
+             <MailIcon/>
+           </ListItemIcon>
+         </ListItem>
+       </List>
+     </Box>
+   }
   return (
     <>
     <Box sx={{ flexGrow: 1 }}>
@@ -38,6 +42,7 @@ const ButtonAppBar = () => {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={toggleDrawer}
           >
             <MenuIcon />
           </IconButton>
@@ -50,9 +55,9 @@ const ButtonAppBar = () => {
         </Toolbar>
       </AppBar>
     </Box>
-          {/* <Modal open={open}>
-            <LoginForm closeHandler={handleClose}/>  
-          </Modal> */}
+    <Drawer anchor='left' open={isOpen} onClose={toggleDrawer}>
+      {drawerItemList()}
+    </Drawer>
      </>
   );
 }

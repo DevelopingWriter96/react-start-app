@@ -14,7 +14,6 @@ function App() {
       <ButtonAppBar />
       <Routes>
         <Route path="/favorites" element={<Favorites />} />
-        <Route path="/games" element={<StarShipsContainer />} />
         <Route path="/adventure" element={<Adventure />} />
         <Route path="/login" element={<LoginForm />} />
       </Routes>
