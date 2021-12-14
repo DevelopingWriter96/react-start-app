@@ -11,7 +11,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 //import LoginForm from '../login/LoginForm';
 import { NavLink } from 'react-router-dom';
 import { ListItem, List, Drawer, ListItemIcon, ListItemText } from '@mui/material'
-import MailIcon from '@mui/icons-material/Mail'
+import HomeIcon from '@mui/icons-material/Home'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import CheckCircle from '@mui/icons-material/CheckCircle';
 
 const ButtonAppBar = () => {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -25,9 +27,21 @@ const ButtonAppBar = () => {
        <List>
          <ListItem button >
            <ListItemIcon>
-             <MailIcon/>
+             <HomeIcon/>
            </ListItemIcon>
            <ListItemText primary='Home' />
+         </ListItem>
+         <ListItem button >
+           <ListItemIcon>
+             <CheckCircle/>
+           </ListItemIcon>
+           <ListItemText primary='Adventures' />
+         </ListItem>
+         <ListItem button >
+           <ListItemIcon>
+             <FavoriteIcon/>
+           </ListItemIcon>
+           <ListItemText primary='Favorites' />
          </ListItem>
        </List>
      </Box>

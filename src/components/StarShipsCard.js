@@ -7,7 +7,7 @@ import CardActions from '@mui/material/CardActions'
 import IconButton from '@mui/material/IconButton'
 import InfoIcon from '@mui/icons-material/CheckCircle'
 import FavoriteIcon from '@mui/icons-material/Favorite'
-import AddIcon from '@mui/icons-material/Add'
+
 
 const StarShipsCard = (props) => {
     const [favorite, setFavorite] = React.useState(false)
@@ -52,9 +52,6 @@ const StarShipsCard = (props) => {
     </IconButton>
     <IconButton sx={{ p: 0, m: 0}} onClick={handleFavoriteClick}>
         <FavoriteIcon sx={{ color: favorite ? '#F00' : '#000'}}/>
-    </IconButton> 
-    <IconButton>
-        <AddIcon />
     </IconButton>     
     </CardActions>
     </Card>
