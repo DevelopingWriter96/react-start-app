@@ -2,6 +2,7 @@ import { Box, Button, TextField } from '@mui/material'
 import { Typography } from '@mui/material'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
+import { useNavigate } from 'react-router-dom'
 
 const style = {
     postion: 'absolute',
@@ -16,8 +17,8 @@ const style = {
 }
 
 const LoginForm = (props) => {
-    const { closeHandler } = props
-
+    const navigate = useNavigate()
+const handleClose = () => navigate('/games')
     return (
         <Box sx={style}>
             <Typography>Greetings Traveler! Have we met?</Typography>
@@ -43,7 +44,7 @@ const LoginForm = (props) => {
                         setErrors({ submit: err.message })
                         setSubmitting(false)
                     } finally {
-                        closeHandler()
+                        handleClose()
                     }
                 }}
             >

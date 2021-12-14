@@ -7,8 +7,9 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import Modal from '@mui/material/Modal'
-import LoginForm from '../login/LoginForm';
+//import Modal from '@mui/material/Modal'
+//import LoginForm from '../login/LoginForm';
+import { NavLink } from 'react-router-dom';
 
 /* const style = {
   postion: 'absolute',
@@ -23,9 +24,9 @@ import LoginForm from '../login/LoginForm';
 }*/
 
 const ButtonAppBar = () => {
-  const [open, setOpen] = React.useState(false)
-  const handleOpen = () => setOpen(true)
-  const handleClose = () => setOpen(false)
+  //const [open, setOpen] = React.useState(false)
+  //const handleOpen = () => setOpen(true)
+  //const handleClose = () => setOpen(false)
   return (
     <>
     <Box sx={{ flexGrow: 1 }}>
@@ -43,13 +44,15 @@ const ButtonAppBar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Welcome to The Kingdom of Hyrule
           </Typography>
-          <Button color="inherit" onClick={handleOpen}>Login</Button>
+          <Button color="inherit">
+          <NavLink to="/login">Login to save your Zelda Games</NavLink>
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>
-          <Modal open={open}>
+          {/* <Modal open={open}>
             <LoginForm closeHandler={handleClose}/>  
-          </Modal>
+          </Modal> */}
      </>
   );
 }
