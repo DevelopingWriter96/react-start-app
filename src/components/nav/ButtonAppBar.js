@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 //import Modal from '@mui/material/Modal'
 //import LoginForm from '../login/LoginForm';
 import { NavLink } from 'react-router-dom';
-import { ListItem, List, Drawer, ListItemIcon } from '@mui/material'
+import { ListItem, List, Drawer, ListItemIcon, ListItemText } from '@mui/material'
 import MailIcon from '@mui/icons-material/Mail'
 
 const ButtonAppBar = () => {
@@ -20,17 +20,18 @@ const ButtonAppBar = () => {
      setIsOpen(!isOpen)
    }
 
-   const drawerItemList = () => {
+   const drawerItemList = () => (
      <Box sx={{ width: 250 }} role="presentation">
        <List>
-         <ListItem>
+         <ListItem button >
            <ListItemIcon>
              <MailIcon/>
            </ListItemIcon>
+           <ListItemText primary='Home' />
          </ListItem>
        </List>
      </Box>
-   }
+   )
   return (
     <>
     <Box sx={{ flexGrow: 1 }}>
