@@ -9,23 +9,29 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 //import Modal from '@mui/material/Modal'
 //import LoginForm from '../login/LoginForm';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { ListItem, List, Drawer, ListItemIcon, ListItemText } from '@mui/material'
 import HomeIcon from '@mui/icons-material/Home'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import CheckCircle from '@mui/icons-material/CheckCircle';
 
 const ButtonAppBar = () => {
+  const history = useNavigate()
   const [isOpen, setIsOpen] = React.useState(false)
 
    const toggleDrawer = () => {
      setIsOpen(!isOpen)
    }
 
+   const handleNavChoice = () => {
+     history('')
+     toggleDrawer()
+   }
+
    const drawerItemList = () => (
      <Box sx={{ width: 250 }} role="presentation">
        <List>
-         <ListItem button >
+         <ListItem button onClick={handleNavChoice}>
            <ListItemIcon>
              <HomeIcon/>
            </ListItemIcon>
@@ -35,13 +41,13 @@ const ButtonAppBar = () => {
            <ListItemIcon>
              <CheckCircle/>
            </ListItemIcon>
-           <ListItemText primary='Adventures' />
+           <ListItemText primary= '/Adventures' />
          </ListItem>
          <ListItem button >
            <ListItemIcon>
              <FavoriteIcon/>
            </ListItemIcon>
-           <ListItemText primary='Favorites' />
+           <ListItemText primary= 'Favorites' />
          </ListItem>
        </List>
      </Box>

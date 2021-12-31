@@ -13,8 +13,8 @@ function App() {
       <GamesContextProvider>
       <ButtonAppBar />
       <Routes>
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/adventure" element={<Adventure />} />
+        <Route path="/Favorites" element={<Favorites />} />
+        <Route path="/Adventures" element={<Adventure />} />
         <Route path="/login" element={<LoginForm />} />
       </Routes>
       <StarShipsContainer />

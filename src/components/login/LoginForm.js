@@ -17,8 +17,8 @@ const style = {
 }
 
 const LoginForm = (props) => {
-    const navigate = useNavigate()
-const handleClose = () => navigate('root')
+const history = useNavigate()
+const handleClose = () => history.push()
     return (
         <Box sx={style}>
             <Typography>Greetings Traveler! Have we met?</Typography>
