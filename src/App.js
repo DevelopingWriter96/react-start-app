@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import Favorites from './pages/Favorites'
 import Adventure from './pages/Adventures'
 import LoginForm from './components/login/LoginForm'
+import GameDetails from './pages/GameDetails'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/Favorites" element={<Favorites />} />
         <Route path="/Adventures" element={<Adventure />} />
+        <Route path="/game/:gameId" element={<GameDetails />} />
         <Route path="/login" element={<LoginForm />} />
       </Routes>
       <StarShipsContainer />
