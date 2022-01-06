@@ -2,7 +2,7 @@ import './App.css'
 import StarShipsContainer from './components/StarShipsContainer'
 import { GamesContextProvider } from './contexts/gamescontext'
 import ButtonAppBar from './components/nav/ButtonAppBar'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Favorites from './pages/Favorites'
 import Adventure from './pages/Adventures'
 import LoginForm from './components/login/LoginForm'
@@ -14,6 +14,7 @@ function App() {
     <div className="App">
       <GamesContextProvider>
       <ButtonAppBar />
+        <Switch>
         <Route path="/">
         <StarShipsContainer />
         </Route>
@@ -32,6 +33,7 @@ function App() {
         <Route path="*">
         <NotFound />
         </Route>
+        </Switch>
       </GamesContextProvider>
     </div>
   )
