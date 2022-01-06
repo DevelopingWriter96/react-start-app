@@ -2,7 +2,7 @@ import { Box, Button, TextField } from '@mui/material'
 import { Typography } from '@mui/material'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { useNavigate } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const style = {
     postion: 'absolute',
@@ -17,7 +17,7 @@ const style = {
 }
 
 const LoginForm = (props) => {
-const history = useNavigate()
+const history = useHistory()
 const handleClose = () => history.push()
     return (
         <Box sx={style}>

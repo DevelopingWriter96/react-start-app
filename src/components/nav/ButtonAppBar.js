@@ -9,14 +9,14 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 //import Modal from '@mui/material/Modal'
 //import LoginForm from '../login/LoginForm';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 import { ListItem, List, Drawer, ListItemIcon, ListItemText } from '@mui/material'
 import HomeIcon from '@mui/icons-material/Home'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import CheckCircle from '@mui/icons-material/CheckCircle';
 
 const ButtonAppBar = () => {
-  const history = useNavigate()
+  const history = useHistory()
   const [isOpen, setIsOpen] = React.useState(false)
 
    const toggleDrawer = () => {
