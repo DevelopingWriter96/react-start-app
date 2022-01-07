@@ -2,7 +2,7 @@ import './App.css'
 import StarShipsContainer from './components/StarShipsContainer'
 import { GamesContextProvider } from './contexts/gamescontext'
 import ButtonAppBar from './components/nav/ButtonAppBar'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import Favorites from './pages/Favorites'
 import Adventure from './pages/Adventures'
 import LoginForm from './components/login/LoginForm'
@@ -15,23 +15,26 @@ function App() {
       <GamesContextProvider>
       <ButtonAppBar />
         <Switch>
-        <Route path="/">
+        <Route path = "/" exact>
+        <Redirect to="/games" />
+        </Route>
+        <Route path="/games">
         <StarShipsContainer />
         </Route>
-        <Route path="/Favorites">
+        <Route path="/favorites">
         <Favorites />
         </Route>
-        <Route path="/Adventures">
+        <Route path="/adventures">
         <Adventure />
         </Route>
-        <Route path="/GameDetails/:gameId" exact>
+        <Route path="/gameDetails/:gameId" exact>
         <GameDetails />
         </Route>
         <Route path="/login">
         <LoginForm />
         </Route>
         <Route path="*">
-        <NotFound />
+        <NotFound/>
         </Route>
         </Switch>
       </GamesContextProvider>

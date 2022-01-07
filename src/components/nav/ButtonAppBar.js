@@ -31,19 +31,19 @@ const ButtonAppBar = () => {
    const drawerItemList = () => (
      <Box sx={{ width: 250 }} role="presentation">
        <List>
-         <ListItem button onClick={handleNavChoice}>
+         <ListItem button onClick={() => handleNavChoice('')}>
            <ListItemIcon>
              <HomeIcon/>
            </ListItemIcon>
            <ListItemText primary='Home' />
          </ListItem>
-         <ListItem button >
+         <ListItem button onClick={() => handleNavChoice('Adventures')} >
            <ListItemIcon>
              <CheckCircle/>
            </ListItemIcon>
-           <ListItemText primary= '/Adventures' />
+           <ListItemText primary= 'Adventures' />
          </ListItem>
-         <ListItem button >
+         <ListItem button onClick={() => handleNavChoice('Favorites')}>
            <ListItemIcon>
              <FavoriteIcon/>
            </ListItemIcon>
