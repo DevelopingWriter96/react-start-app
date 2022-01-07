@@ -23,27 +23,27 @@ const ButtonAppBar = () => {
      setIsOpen(!isOpen)
    }
 
-   const handleNavChoice = () => {
-     history('')
+   const handleNavChoice = (choice) => {
+     history.push(`/${choice}`)
      toggleDrawer()
    }
 
    const drawerItemList = () => (
      <Box sx={{ width: 250 }} role="presentation">
        <List>
-         <ListItem button onClick={() => handleNavChoice('')}>
+         <ListItem button onClick={() => handleNavChoice('games')}>
            <ListItemIcon>
              <HomeIcon/>
            </ListItemIcon>
            <ListItemText primary='Home' />
          </ListItem>
-         <ListItem button onClick={() => handleNavChoice('Adventures')} >
+         <ListItem button onClick={() => handleNavChoice('adventures')}>
            <ListItemIcon>
              <CheckCircle/>
            </ListItemIcon>
            <ListItemText primary= 'Adventures' />
          </ListItem>
-         <ListItem button onClick={() => handleNavChoice('Favorites')}>
+         <ListItem button onClick={() => handleNavChoice('favorites')}>
            <ListItemIcon>
              <FavoriteIcon/>
            </ListItemIcon>
